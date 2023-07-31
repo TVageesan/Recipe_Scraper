@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel="stylesheet" type = "text/css" href = "{{ url_for('static',filename='styles/main.css') }}" />
+        <title>Your Shopping List</title>
+    </head>
+    <body>
+        <h1> Your Shopping List</h1>
+        <ul>
+            {% for item in raw_data%}
+                <li> 
+                    <span>{{item}}</span>{% for unit in raw_data[item]%}<span> {{raw_data[item][unit]}} {{unit}}</span>{% endfor %}
+                </li>
+            {% endfor %}
+        </ul>
+        <p><p><a href = "{{url_for('hello_world')}}">Go back to urls</a></p></p>
+    </body>
+</html>
+
